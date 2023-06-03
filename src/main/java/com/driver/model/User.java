@@ -23,7 +23,7 @@ public class User {
 
     @OneToOne
     @JoinColumn
-    Country country;
+    Country originalCountry;
 
     @ManyToMany
     @JoinColumn
@@ -42,7 +42,7 @@ public class User {
         this.originalIp = originalIP;
         this.maskedIp = maskedIP;
         this.connected = connected;
-        this.country = country;
+        this.originalCountry = country;
         this.serviceProviderList = serviceProviderList;
         this.connectionList = connectionList;
     }
@@ -95,12 +95,12 @@ public class User {
         this.connected = connected;
     }
 
-    public Country getCountry() {
-        return country;
+    public Country getOriginalCountry() {
+        return originalCountry;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setOriginalCountry(Country originalCountry) {
+        this.originalCountry = originalCountry;
     }
 
     public List<ServiceProvider> getServiceProviderList() {
