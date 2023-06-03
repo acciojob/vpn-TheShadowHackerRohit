@@ -23,7 +23,7 @@ public class User {
 
     @OneToOne
     @JoinColumn
-    private Country country;
+    Country country;
 
     @ManyToMany
     @JoinColumn
