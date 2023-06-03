@@ -52,7 +52,7 @@ public class ConnectionServiceImpl implements ConnectionService {
             throw new Exception("Already connected");
         }
         countryName = countryName.toUpperCase();
-        if (user.getOriginalCountry().toString().equals(countryName)){
+        if (user.getCountry().toString().equals(countryName)){
             return user;
         }
         if (user.getServiceProviderList().size() == 0){
