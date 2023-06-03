@@ -3,6 +3,7 @@ package com.driver.model;
 
 import javax.persistence.*;
 
+@Entity
 public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,8 +13,7 @@ public class Country {
 
     private String code;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(mappedBy = "country",cascade = CascadeType.ALL)
     User user;
 
     @ManyToOne
@@ -21,6 +21,11 @@ public class Country {
     ServiceProvider serviceProvider;
 
     public Country() {
+    }
+
+
+    public Country(CountryName countryName) {
+        this.countryName = countryName;
     }
 
     public int getId() {

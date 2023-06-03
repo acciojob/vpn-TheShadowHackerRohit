@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 @Table(name = "service_provider")
 public class ServiceProvider {
 
@@ -17,7 +18,7 @@ public class ServiceProvider {
     @JoinColumn
     Admin admin;
 
-    @ManyToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "serviceProviderList", cascade = CascadeType.ALL)
     List<User> users = new ArrayList<>();
 
     @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)

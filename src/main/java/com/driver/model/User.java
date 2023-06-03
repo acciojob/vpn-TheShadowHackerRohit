@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class User {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +15,14 @@ public class User {
 
     private String password;
 
-    private String originalIP;
+    private String originalIp;
 
-    private String maskedIP;
+    private String maskedIp;
 
     private Boolean connected;
 
+    @OneToOne
+    @JoinColumn
     private Country country;
 
     @ManyToMany
@@ -36,8 +39,8 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.originalIP = originalIP;
-        this.maskedIP = maskedIP;
+        this.originalIp = originalIP;
+        this.maskedIp = maskedIP;
         this.connected = connected;
         this.country = country;
         this.serviceProviderList = serviceProviderList;
@@ -68,20 +71,20 @@ public class User {
         this.password = password;
     }
 
-    public String getOriginalIP() {
-        return originalIP;
+    public String getOriginalIp() {
+        return originalIp;
     }
 
-    public void setOriginalIP(String originalIP) {
-        this.originalIP = originalIP;
+    public void setOriginalIp(String originalIp) {
+        this.originalIp = originalIp;
     }
 
-    public String getMaskedIP() {
-        return maskedIP;
+    public String getMaskedIp() {
+        return maskedIp;
     }
 
-    public void setMaskedIP(String maskedIP) {
-        this.maskedIP = maskedIP;
+    public void setMaskedIp(String maskedIp) {
+        this.maskedIp = maskedIp;
     }
 
     public Boolean getConnected() {
