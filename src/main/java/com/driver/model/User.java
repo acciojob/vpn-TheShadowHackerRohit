@@ -15,7 +15,7 @@ public class User {
 
     private String password;
 
-    private String originalCountry;
+    private String countryIp;
 
     private String maskedIp;
 
@@ -23,7 +23,7 @@ public class User {
 
     @OneToOne
     @JoinColumn
-    Country country;
+    Country originalCountry;
 
     @ManyToMany
     @JoinColumn
@@ -39,10 +39,10 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.originalCountry = originalIP;
+        this.countryIp = originalIP;
         this.maskedIp = maskedIP;
         this.connected = connected;
-        this.country = country;
+        this.originalCountry = country;
         this.serviceProviderList = serviceProviderList;
         this.connectionList = connectionList;
     }
@@ -71,12 +71,12 @@ public class User {
         this.password = password;
     }
 
-    public String getOriginalCountry() {
-        return originalCountry;
+    public String getCountryIp() {
+        return countryIp;
     }
 
-    public void setOriginalCountry(String originalCountry) {
-        this.originalCountry = originalCountry;
+    public void setCountryIp(String countryIp) {
+        this.countryIp = countryIp;
     }
 
     public String getMaskedIp() {
@@ -95,12 +95,12 @@ public class User {
         this.connected = connected;
     }
 
-    public Country getCountry() {
-        return country;
+    public Country getOriginalCountry() {
+        return originalCountry;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setOriginalCountry(Country originalCountry) {
+        this.originalCountry = originalCountry;
     }
 
     public List<ServiceProvider> getServiceProviderList() {
