@@ -71,11 +71,11 @@ public class User {
         this.password = password;
     }
 
-    public String getCountryIp() {
+    public String getOriginalIp() {
         return originalIp;
     }
 
-    public void setCountryIp(String countryIp) {
+    public void setOriginalIp(String countryIp) {
         this.originalIp = countryIp;
     }
 
